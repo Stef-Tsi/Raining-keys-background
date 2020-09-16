@@ -1,0 +1,272 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #08d1fa;
+    overflow: hidden;
+}
+
+.container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -120px;
+    left: -120px;
+    z-index: 2;
+
+}
+
+.container div{
+    position: absolute;
+}
+
+.container div.key:nth-child(1)
+{
+    left: 64%;
+    animation: animate 15s linear infinite;
+    animation-delay:-7s;
+}
+.container div.key:nth-child(2)
+{
+   left: 23%;
+   animation: animate 20s linear infinite;
+    animation-delay:-5s;
+}
+.container div.key:nth-child(3)
+{
+    left: 12%;
+    animation: animate 25s linear infinite;
+}
+.container div.key:nth-child(4)
+{
+    left: 3%;
+    animation: animate 15s linear infinite;
+    animation-delay:-5s;
+}
+.container div.key:nth-child(5)
+{
+    left: 46%;
+    animation: animate 18s linear infinite;
+    animation-delay:-10s;
+}
+.container div.key:nth-child(6)
+{
+    left: 88%;
+    animation: animate 12s linear infinite;
+}
+.container div.key:nth-child(7)
+{
+    left: 36%;
+    animation: animate 14s linear infinite;
+}
+.container div.key:nth-child(8)
+{
+    left: 71%;
+    animation: animate 17s linear infinite;
+
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        top: -10%;
+        transform: translateX(20px) rotate(0deg) scale(0.2);
+    }
+    10%
+    {
+     opacity: 1;
+    }
+    20%
+    {
+        transform: translateX(20px) rotate(45deg) scale(0.2);
+    }
+    40%
+    {
+        transform: translateX(20px) rotate(90deg) scale(0.2);
+    }
+    60%
+    {
+        transform: translateX(20px) rotate(135deg) scale(0.2);
+    }
+    80%
+    {
+        transform: translateX(20px) rotate(185deg) scale(0.2);
+    }
+    100%
+    {
+        top: 110%;
+        opacity: 0;
+        transform: translateX(20px) rotate(225deg) scale(0.2);
+    }
+}
+
+.big-keys{
+    transform: scale(2) rotateY(180deg);
+    filter: blur(2px);
+    z-index: 3;
+}
+
+.small-keys{
+    transform: scale(0.8) rotateY(180deg);
+    filter: blur(4px);
+    z-index: 1;
+}
+
+
+.key {
+    position: relative;
+    z-index: 50;
+
+    display: flex;
+    justify-content: center;
+    width: 20rem;
+    height: 20rem;
+    overflow: hidden;
+
+    background-color: #92b5cb;
+    border: 1rem solid #626b70;
+    border-radius: 3rem;
+    transform: scale(0.2);
+    cursor: pointer;
+
+    transition: 0.1s;
+    /*
+  If you want to change the size of the keys you can write:
+  transform: scale(0.5);
+  */
+}
+
+/*long key*/
+.key.long {
+    width: 30rem;
+}
+
+.key.long > .text {
+    width: 20rem;
+    height: 11rem;
+}
+/*long key*/
+
+.key.long:active .text {
+    width: 19rem;
+}
+
+.key.long::before {
+    width: 28rem;
+    height: 90%;
+}
+
+.key:active {
+    box-shadow: inset 0 -10rem 7rem #80a2b8;
+}
+
+.key:active .text {
+    width: 11rem;
+    height: 11rem;
+
+    font-size: 9rem;
+}
+
+.key:active .text {
+    width: 11rem;
+    height: 11rem;
+
+    font-size: 9rem;
+
+    box-shadow: 0 -10rem 10rem 3rem #dfe4e7,
+    inset 0rem 1rem 2rem #92b5cb;
+}
+
+.key::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+
+    width: 90%;
+    height: 90%;
+
+    border: 1rem solid rgb(209, 218, 225);
+    border-radius: 2rem;
+}
+
+/*
+angle-shadow
+*/
+.angle-shadow {
+    position: absolute;
+}
+
+.angle-shadow.top-section {
+    top: 3rem;
+
+    width: 7rem;
+    height: 0.5rem;
+
+    background-color: rgb(232, 232, 233);
+    box-shadow: 0 0 1rem rgb(194, 208, 221);
+}
+
+.angle-shadow.bottom-section {
+    bottom: 0rem;
+
+    border-right: 1rem solid transparent;
+    border-bottom: 9rem solid #d0d9e0;
+    border-left: 1rem solid transparent;
+}
+
+.angle-shadow.left-top {
+    left: 0.5rem;
+
+    transform: rotate(36deg);
+}
+
+.angle-shadow.right-top {
+    right: 0.5rem;
+
+    transform: rotate(-36deg);
+}
+
+.angle-shadow.left-bottom {
+    left: 2.5rem;
+
+    transform: rotate(30deg);
+}
+
+.angle-shadow.right-bottom {
+    right: 2.5rem;
+
+    transform: rotate(-30deg);
+}
+
+.key .text {
+    position: relative;
+    top: 2rem;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
+    height: 12rem;
+
+    font-size: 10rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #007da9;
+
+    background-color: #e0e4e7;
+    border: 1rem solid #ebe9ea;
+    border-radius: 3rem;
+    box-shadow: 0 -10rem 10rem 3rem #94b5c8,
+    inset 0rem -0.8rem 2rem #a9c4d7;
+
+    transition: 0.1s;
+
+    -webkit-user-select:      none;
+    -moz-user-select: -moz-none;
+    user-select:      none;
+
+    -khtml-user-select:      none;
+    -o-user-select:      none;
+}
